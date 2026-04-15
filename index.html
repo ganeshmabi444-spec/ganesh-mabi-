@@ -1,1 +1,415 @@
 
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Ganesh Secondary School | Official Portal</title>
+    <style>
+        :root {
+            --primary: #0d47a1;
+            --secondary: #ffd600;
+            --accent: #1565c0;
+            --success: #2e7d32;
+            --light: #f4f7f6;
+            --dark-card: #1e1e1e;
+            --white: #ffffff;
+        }
+
+        /* Global Styles */
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); transition: 0.3s; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+        body.dark { background: #121212; color: #eee; }
+
+        /* Top Bar */
+        .top-nav { background: #072d66; color: white; padding: 10px 25px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; border-bottom: 3px solid var(--secondary); position: sticky; top: 0; z-index: 2000; }
+        #clock { font-weight: bold; background: var(--secondary); color: #000; padding: 2px 8px; border-radius: 4px; }
+
+        /* Header */
+        header { background: linear-gradient(rgba(13,71,161,0.85), rgba(13,71,161,0.85)), url('https://i.imgur.com/1lCqOqk.jpeg') center/cover; color: white; text-align: center; padding: 60px 20px; border-bottom: 6px solid var(--secondary); }
+        .logo { width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        /* Navigation */
+        nav { background: var(--accent); padding: 12px 0; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 41px; z-index: 1000; }
+        nav a { color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; text-transform: uppercase; font-size: 12px; transition: 0.3s; }
+        nav a:hover { color: var(--secondary); }
+        /* ग्यालेरीका फोटोहरूलाई मिलाउन */
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 250px; /* यहाँबाट उचाइ कन्ट्रोल गर्न सकिन्छ */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* यसले गर्दा फोटो नतन्किकन ट्याक्क फिट हुन्छ */
+    transition: 0.4s;
+}
+
+/* मोबाइलको लागि अझै सानो बनाउन */
+@media (max-width: 600px) {
+    .gallery-item {
+        height: 180px; /* मोबाइलमा अलि सानो देखिन्छ */
+    }
+    
+    header {
+        padding: 30px 15px; /* हेडरको साइज पनि अलि घटाउँदा राम्रो हुन्छ */
+    }
+    
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+}
+       /* Floating Container - बटनहरूलाई दायाँ कुनामा राख्न */
+.floatin
+
+        /* Sections */
+        section { max-width: 1100px; margin: 35px auto; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        body.dark section { background: var(--dark-card); border: 1px solid #333; }
+        h2 { color: var(--primary); border-left: 10px solid var(--secondary); padding-left: 15px; margin-bottom: 30px; }
+        body.dark h2 { color: var(--secondary); }
+
+        /* Teacher Grid */
+        .teacher-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .teacher-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #eee; text-align: center; transition: 0.3s; }
+        body.dark .teacher-card { background: #2a2a2a; border-color: #444; }
+        .teacher-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .teacher-card img { width: 100%; height: 230px; object-fit: cover; border-bottom: 3px solid var(--secondary); }
+        .t-info { padding: 12px; }
+        .t-info h3 { margin: 5px 0; font-size: 1rem; color: var(--primary); }
+        body.dark .t-info h3 { color: #fff; }
+        .t-info p { color: var(--success); font-weight: bold; margin: 0; font-size: 0.85rem; }
+
+        /* Form Styles */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .full-width { grid-column: span 2; }
+        .input-group { display: flex; flex-direction: column; }
+        label { font-weight: bold; margin-bottom: 8px; }
+        input, select, textarea { padding: 12px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; }
+        .btn-submit { background: var(--success); color: white; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: #1b5e20; transform: translateY(-2px); }
+
+        /* Developer Card */
+        .dev-card { display: flex; align-items: center; gap: 25px; background: #fff8e1; padding: 25px; border-radius: 15px; border: 2px dashed var(--secondary); }
+        body.dark .dev-card { background: #2d2600; }
+        .dev-pic { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--primary); object-fit: cover; }
+
+        footer { background: #051e3e; cofooter { background: #051e3e; color: white; text-align: center; padding: 40px; border-top: 5px solid var(--secondary); }
+        .theme-btn { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 3000; font-size: 20px; }
+
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } .dev-card { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+
+<div class="top-nav">
+    <div id="date">Loading...</div>
+    <div>📍 Ratmate, Nuwakot | <span id="clock">00:00:00</span></div>
+</div>
+
+<header>
+    <img src="https://i.imgur.com/rhZP1BC.jpeg" alt="Logo" class="logo">
+    <h1>श्री गणेश माध्यमिक विद्यालय</h1>
+    <p>सूर्यगढी-४, रातमाटे, नुवाकोट</p>
+</header>
+
+<nav>
+    <a href="#admission">भर्ना फारम</a>
+    <a href="#teachers">शिक्षकहरू</a>
+    <a href="#contact">सम्पर्क</a>
+    <a href="#developer">डेभलपर</a>
+    <a href="#Notice">notice</a>
+    <a href="#gallery">gallery</a>
+</nav>
+
+<section id="admission">
+    <h2>अनलाइन भर्ना आवेदन (२०८३)</h2>
+    <form class="form-grid" action="https://formspree.io/f/xgonldyb" method="POST">
+        <div class="input-group">
+            <label>विद्यार्थीको पूरा नाम</label>
+            <input type="text" name="student_name" placeholder="नाम यहाँ लेख्नुहोस्" required>
+        </div>
+        <div class="input-group">
+            <label>भर्ना हुन चाहेको कक्षा</label>
+            <select name="class" required>
+                <option value="">-- कक्षा छान्नुहोस् --</option>
+                <option>PG - 5</option>
+                <option>6 - 10</option>
+                <option>11 (व्यवस्थापन)</option>
+                <option>11 (शिक्षा)</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>अभिभावकको नाम</label>
+            <input type="text" name="guardian" required>
+        </div>
+        <div class="input-group">
+            <label>सम्पर्क फोन नम्बर</label>
+            <input type="tel" name="phone" placeholder="98XXXXXXXX" required>
+        </div>
+        <button type="submit" class="btn-submit full-width">आवेदन पठाउनुहोस्</button>
+    </form>
+</section>
+    <section id="notices" style="background: #fff5f5; border: 2px solid #ffcdd2;">
+    <h2 style="color: #c62828; border-left-color: #c62828;">📢 भर्खरैका सूचनाहरू (Recent Notices)</h2>
+    <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="font-size: 1.2rem; color: #b71c1c; font-weight: bold;">
+        🎯 शैक्षिक सत्र २०८३ को नयाँ भर्ना खुल्यो! | 📝 प्रथम त्रैमासिक परीक्षा आगामी जेठ १५ गतेदेखि संचालन हुनेछ। | 🏆 खेलकुद सप्ताहको नतिजा प्रकाशित गरिएको छ।
+    </marquee>
+</section>
+
+<section id="gallery">
+    <h2>विद्यालयको झलक (Gallery)</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://i.imgur.com/8okKQUD.jpeg" onclick="openFullImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://i.imgur.com/EMrhssA.jpeg" onclick="openFullImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://i.imgur.com/b8z2amr.jpeg" onclick="openFullImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://i.imgur.com/rhZP1BC.jpeg" onclick="openFullImg(this.src)"></div>
+    </div>
+</section>
+
+<script>
+    function speak(text) {
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        msg.lang = 'ne-NP'; // नेपाली आवाजको लागि
+        window.speechSynthesis.speak(msg);
+    }
+
+    // फोटो ठूलो बनाउने फङ्सन
+    function openFullImg(src) {
+        const fullImgWindow = window.open("");
+        fullImgWindow.document.write(`<img src="${src}" style="width:100%; height:auto;">`);
+    }
+</script>
+
+<style>
+    /* नयाँ एनिमेसन थप्न */
+    .teacher-card:hover {
+        border: 2px solid var(--secondary);
+        box-shadow: 0 15px 35px rgba(13,71,161,0.2);
+    }
+    
+    /* स्क्रोल गर्दा बिस्तारै देखिने प्रभाव */
+    section {
+        animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+    
+
+<section id="teachers">
+    <h2>हाम्रा शिक्षक तथा कर्मचारीहरू (२२ सदस्यहरू)</h2>
+    <div class="teacher-grid">
+        <div class="teacher-card"><img src="https://i.imgur.com/MHBF7pF.jpeg"><div class="t-info"><h3>Keshar Adhikari</h3><p>प्रधानाध्यापक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/7XQKRUN.jpeg"><div class="t-info"><h3>Ram Kumar Giri</h3><p>सूचना अधिकारी</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/mYIU2Gv.jpeg"><div class="t-info"><h3>Mina Thapa</h3><p>शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/kAoRQmk.jpeg"><div class="t-info"><h3>Chandika Bhatta</h3><p>ECD शिक्षक</p></div></div>
+        <div class="teacher-cfooter { background: #051e3e; color: white; text-align: center; padding: 40px; border-top: 5px solid var(--secondary); }
+        .theme-btn { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 3000; font-size: 20px; }
+
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } .dev-card { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+
+<div class="top-nav">
+    <div id="date">Loading...</div>
+    <div>📍 Ratmate, Nuwakot | <span id="clock">00:00:00</span></div>
+</div>
+
+<header>
+    <img src="https://i.imgur.com/rhZP1BC.jpeg" alt="Logo" class="logo">
+    <h1>श्री गणेश माध्यमिक विद्यालय</h1>
+    <p>सूर्यगढी-४, रातमाटे, नुवाकोट</p>
+</header>
+
+<nav>
+    <a href="#admission">भर्ना फारम</a>
+    <a href="#teachers">शिक्षकहरू</a>
+    <a href="#contact">सम्पर्क</a>
+    <a href="#developer">डेभलपर</a>
+    <a href="#Notice">notice</a>
+    <a href="#gallery">gallery</a>
+</nav>
+<section id="admission">
+    <h2>अनलाइन भर्ना आवेदन (२०८३)</h2>
+    <form class="form-grid" action="https://formspree.io/f/xgonldyb" method="POST">
+        <div class="input-group">
+            <label>विद्यार्थीको पूरा नाम</label>
+            <input type="text" name="student_name" placeholder="नाम यहाँ लेख्नुहोस्" required>
+        </div>
+        <div class="input-group">
+            <label>भर्ना हुन चाहेको कक्षा</label>
+            <select name="class" required>
+                <option value="">-- कक्षा छान्नुहोस् --</option>
+                <option>PG - 5</option>
+                <option>6 - 10</option>
+                <option>11 (व्यवस्थापन)</option>
+                <option>11 (शिक्षा)</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>अभिभावकको नाम</label>
+            <input type="text" name="guardian" required>
+        </div>
+        <div class="input-group">
+            <label>सम्पर्क फोन नम्बर</label>
+            <input type="tel" name="phone" placeholder="98XXXXXXXX" required>
+        </div>
+        <button type="submit" class="btn-submit full-width">आवेदन पठाउनुहोस्</button>
+    </form>
+</section>
+    <section id="notices" style="background: #fff5f5; border: 2px solid #ffcdd2;">
+    <h2 style="color: #c62828; border-left-color: #c62828;">📢 भर्खरैका सूचनाहरू (Recent Notices)</h2>
+    <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="font-size: 1.2rem; color: #b71c1c; font-weight: bold;">
+        🎯 शैक्षिक सत्र २०८३ को नयाँ भर्ना खुल्यो! | 📝 प्रथम त्रैमासिक परीक्षा आगामी जेठ १५ गतेदेखि संचालन हुनेछ। | 🏆 खेलकुद सप्ताहको नतिजा प्रकाशित गरिएको छ।
+    </marquee>
+</section>
+
+<section id="gallery">
+    <h2>विद्यालयको झलक (Gallery)</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://i.imgur.com/8okKQUD.jpeg" onclick="openFullImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://i.imgur.com/EMrhssA.jpeg" onclick="openFullImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://i.imgur.com/b8z2amr.jpeg" onclick="openFullImg(this.src)"></div>
+        <div class="gallery-item"><img src="https://i.imgur.com/rhZP1BC.jpeg" onclick="openFullImg(this.src)"></div>
+    </div>
+</section>
+
+<script>
+    function speak(text) {
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        msg.lang = 'ne-NP'; // नेपाली आवाजको लागि
+        window.speechSynthesis.speak(msg);
+    }
+
+    // फोटो ठूलो बनाउने फङ्सन
+    function openFullImg(src) {
+        const fullImgWindow = window.open("");
+        fullImgWindow.document.write(`<img src="${src}" style="width:100%; height:auto;">`);
+    }
+</script>
+
+<style>
+    /* नयाँ एनिमेसन थप्न */
+    .teacher-card:hover {
+        border: 2px solid var(--secondary);
+        box-shadow: 0 15px 35px rgba(13,71,161,0.2);
+    }
+    
+    /* स्क्रोल गर्दा बिस्तारै देखिने प्रभाव */
+    section {
+        animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+    
+
+<section id="teachers">
+    <h2>हाम्रा शिक्षक तथा कर्मचारीहरू (२२ सदस्यहरू)</h2>
+    <div class="teacher-grid">
+        <div class="teacher-card"><img src="https://i.imgur.com/MHBF7pF.jpeg"><div class="t-info"><h3>Keshar Adhikari</h3><p>प्रधानाध्यापक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/7XQKRUN.jpeg"><div class="t-info"><h3>Ram Kumar Giri</h3><p>सूचना अधिकारी</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/mYIU2Gv.jpeg"><div class="t-info"><h3>Mina Thapa</h3><p>शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/kAoRQmk.jpeg"><div class="t-info"><h3>Chandika Bhatta</h3><p>ECD शिक्षक</p></div></div>
+        <div class="teacher-c<div class="teacher-card"><img src="https://i.imgur.com/xOldxMM.jpeg"><div class="t-info"><h3>Mim Bdr. Manandhar</h3><p>अर्थशास्त्र शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/U2eRbrx.jpeg"><div class="t-info"><h3>Saraswati Subedi</h3><p>नेपाली शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/RHtxWdg.jpeg"><div class="t-info"><h3>Ashok Rai</h3><p>विज्ञान शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/mzIcInV.jpeg"><div class="t-info"><h3>H.S. Devkota</h3><p>शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/RBsZLeH.jpeg"><div class="t-info"><h3>Jayaram Pathak</h3><p>लेखा शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/Pv3Etkw.jpeg"><div class="t-info"><h3>S.S. Koirala</h3><p>नेपाली शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/5wOi90i.jpeg"><div class="t-info"><h3>Upendra Thapa</h3><p>गणित शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/YHXbFtc.jpeg"><div class="t-info"><h3>Dipak Malla</h3><p>शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/k7bpqjf.jpeg"><div class="t-info"><h3>Dipendra Thapa</h3><p>गणित शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/x1T7iKg.jpeg"><div class="t-info"><h3>Sita Tamang</h3><p>सामाजिक शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/tmuj6Pe.jpeg"><div class="t-info"><h3>Khamlal Timalsina</h3><p>अंग्रेजी शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/1BcTevG.jpeg"><div class="t-info"><h3>Gita Adhikari</h3><p>शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/2Zw6JDr.jpeg"><div class="t-info"><h3>Rajeshwori Giri</h3><p>शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/T32B8lD.jpeg"><div class="t-info"><h3>Laxmi Adhikari</h3><p>ECD शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/LLTNxx5.jpeg"><div class="t-info"><h3>Goma Saru Magar</h3><p>शिक्षक</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/rjuet5M.png"><div class="t-info"><h3>Shanti Shrestha</h3><p>कार्यालय सहयोगी</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/sahxCxc.png"><div class="t-info"><h3>Kaji Bdr. Paudel</h3><p>कार्यालय सहयोगी</p></div></div>
+        <div class="teacher-card"><img src="https://i.imgur.com/RkLE7nf.jpeg"><div class="t-info"><h3>Padam Bdr. Rai</h3><p>कार्यालय सहयोगी</p></div></div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>सम्पर्क ठेगाना</h2>
+    <div class="form-grid">
+        <div>
+            <p><strong>📍 ठेगाना:</strong> सूर्यगढी-४, नुवाकोट</p>
+            <p><strong>📞 फोन:</strong> +977 9851338955</p>
+            <p><strong>📧 इमेल:</strong> ganeshmabi444@gmail.com</p>
+        </div>
+        <div style="background:#eee; height:150px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#888; border: 1px solid #ccc;">
+            Google Map View (Nuwakot)
+        </div> 
+    </div>
+</section>
+
+<section id="developer">
+    <div class="dev-card">
+        <img src="https://i.imgur.com/X7Ff8qT.jpeg" class="dev-pic" alt="Sirjan Bhattarai">
+        <div>
+            <h3>Sirjan Bhattarai</h3>
+            <p><strong>Lead Web Developer</strong></p>
+            <p>यो डिजिटल पोर्टलको निर्माण र व्यवस्थापन। नुवाकोट र आफ्नो विद्यालयलाई डिजिटल संसारमा जोड्ने प्रयास।</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 श्री गणेश माध्यमिक विद्यालय। Design by Sirjan Bhattarai.</p>
+</footer>
+<div class="floating-actions">
+    <a href="https://wa.me/9851338955" class="wa-btn" target="_blank" style="display: flex; align-items: center; justify-content: center; background: #25d366; width: 50px; height: 50px; border-radius: 50%; color: white; text-decoration: none; font-size: 24px; margin-bottom: 10px;">💬</a>
+    
+    <button onclick="window.scrollTo(0,0)" id="backToTop" style="display: none; align-items: center; justify-content: center; background: var(--primary); width: 50px; height: 50px; border-radius: 50%; color: white; border: none; font-size: 20px; cursor: pointer;">↑</button>
+</div>
+    
+
+<button class="theme-btn" onclick="document.body.classList.toggle('dark')" title="Switch Theme">🌓</button>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('clock').innerText = now.toLocaleTimeString();
+        document.getElementById('date').innerText = now.toDateString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+    <section id="qrcode-section" style="text-align: center; background: white; padding: 40px;">
+    <div class="section-title"><h2>Scan to Visit</h2></div>
+    <div id="qrcode" style="<div id="qrcode" style="display: inline-block; padding: 20px; border: 5px solid var(--primary); background: white;"></div>
+    <p style="margin-top: 10px; font-weight: bold; color: var(--primary);">Shree Ganesh Secondary School Portal</p>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+    //https://backbaba868-glitch.github.io/Our-school-/
+    var websiteURL = window.location.href; 
+
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: websiteURL,
+        width: 150,
+        height: 150,
+        colorDark : "#002147", // तपाईंको Primary Blue Color
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+</script>
+
+</body>
+    </html>
